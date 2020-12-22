@@ -6,6 +6,7 @@ Table of contents:
 - [Databases](#databases)
   - [SQL Server](#sql-server)
   - [PostgreSQL](#postgresql)
+  - [MongoDB](#mongodb)
 - Distributed Caches
   - [Redis](#redis)
 - Event Bus
@@ -22,6 +23,11 @@ docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=12345678Aa' -p 1433:1433 -d mcr.mi
 ## PostgreSQL
 ```shell
 docker run --restart unless-stopped --name local-postgres -e POSTGRES_PASSWORD=12345678Aa -p 5432:5432 -d postgres
+```
+
+## MongoDB
+```shell
+docker run --name tmp-mongo --restart unless-stopped -p 27017:27017 -d mongo:latest
 ```
 
 # Distributed Caches
