@@ -4,12 +4,12 @@ Quickly Set-up your development environment with docker.
 Table of contents:
 
 - [Databases](#databases)
- - [SQL Server](#sql-server)
- - [PostgreSQL](#postgresql)
+  - [SQL Server](#sql-server)
+  - [PostgreSQL](#postgresql)
 - Distributed Caches
- - [Redis](#redis)
+  - [Redis](#redis)
 - Event Bus
- - [RabbitMQ](#rabbitmq)
+  - [RabbitMQ](#rabbitmq)
 
 ---
 # Databases
