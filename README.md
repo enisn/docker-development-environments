@@ -16,17 +16,17 @@ Table of contents:
 # Databases
 
 ## SQL Server
-Windows:
+Original Windows Version:
 ```shell
 docker run --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=12345678Aa' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
 ```
 
-Mac or Linux:
+SqlServer Linux Version:
 ```shell
 docker run -d --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=12345678Aa' -p 1433:1433 microsoft/mssql-server-linux
 ```
 
-Apple M1 (Silicon)
+Azure-Sql for Apple M1 (Silicon)
 ```shell
 docker run --restart unless-stopped -d --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=12345678Aa' -p 1433:1433 mcr.microsoft.com/azure-sql-edge
 ```
