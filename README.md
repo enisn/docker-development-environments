@@ -26,6 +26,11 @@ Mac or Linux:
 docker run -d --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=12345678Aa' -p 1433:1433 microsoft/mssql-server-linux
 ```
 
+Apple M1 (Silicon)
+```shell
+docker run --restart unless-stopped -d --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=12345678Aa' -p 1433:1433 mcr.microsoft.com/azure-sql-edge
+```
+
 - Then go your management IDE and try to connect to `localhost:1433` with **username:** `SA` and **password:** `12345678Aa` 
 
 ## PostgreSQL
