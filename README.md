@@ -6,6 +6,7 @@ Table of contents:
 - [Databases](#databases)
   - [SQL Server](#sql-server)
   - [PostgreSQL](#postgresql)
+  - [MySQL](#mysql)
   - [MongoDB](#mongodb)
 - Distributed Caches
   - [Redis](#redis)
@@ -38,6 +39,18 @@ docker run --restart unless-stopped -d --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -
 docker run --restart unless-stopped --name local-postgres -e POSTGRES_PASSWORD=12345678Aa -p 5432:5432 -d postgres
 ```
 - Then go your management IDE and try to connect to `localhost:5432` with **username:** `postgres` and **password:** `12345678Aa` 
+
+## MySql
+```shell
+docker run --restart unless-stopped -e 'MYSQL_ROOT_PASSWORD=12345678Aa' -p 3306:3306 -d mysql:5.7
+```
+
+For Apple M1 (Silicon)
+```Shell
+docker run --restart unless-stopped -e 'MYSQL_ROOT_PASSWORD=12345678Aa' -p 3306:3306 --platform linux/x86_64 -d mysql:5.7
+```
+
+- Then open management IDE and try to connect to `localhost:3306` with **username:** root and **password:** `12345678Aa`
 
 ## MongoDB
 ```shell
