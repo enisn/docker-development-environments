@@ -16,9 +16,16 @@ Table of contents:
 # Databases
 
 ## SQL Server
+Windows:
 ```shell
 docker run --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=12345678Aa' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
 ```
+
+Mac or Linux:
+```shell
+docker run -d --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=12345678Aa' -p 1433:1433 microsoft/mssql-server-linux
+```
+
 - Then go your management IDE and try to connect to `localhost:1433` with **username:** `SA` and **password:** `12345678Aa` 
 
 ## PostgreSQL
