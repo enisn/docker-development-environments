@@ -19,38 +19,38 @@ Table of contents:
 ## SQL Server
 Original Windows Version:
 ```shell
-docker run --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=12345678Aa' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
+docker run --name tmp-sqlserver --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=1q2w3E*' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
 ```
 
 SqlServer Linux Version:
 ```shell
-docker run -d --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=12345678Aa' -p 1433:1433 microsoft/mssql-server-linux
+docker run --name tmp-sqlserver -d --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=1q2w3E*' -p 1433:1433 microsoft/mssql-server-linux
 ```
 
 Azure-Sql for Apple M1 (Silicon)
 ```shell
-docker run --restart unless-stopped -d --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=12345678Aa' -p 1433:1433 mcr.microsoft.com/azure-sql-edge
+docker run --name tmp-sqlserver --restart unless-stopped -d --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=1q2w3E*' -p 1433:1433 mcr.microsoft.com/azure-sql-edge
 ```
 
-- Then go your management IDE and try to connect to `localhost:1433` with **username:** `SA` and **password:** `12345678Aa` 
+- Then go your management IDE and try to connect to `localhost:1433` with **username:** `SA` and **password:** `1q2w3E*` 
 
 ## PostgreSQL
 ```shell
-docker run --restart unless-stopped --name local-postgres -e POSTGRES_PASSWORD=12345678Aa -p 5432:5432 -d postgres
+docker run --name tmp-postgres --restart unless-stopped -e POSTGRES_PASSWORD=1q2w3E* -p 5432:5432 -d postgres
 ```
-- Then go your management IDE and try to connect to `localhost:5432` with **username:** `postgres` and **password:** `12345678Aa` 
+- Then go your management IDE and try to connect to `localhost:5432` with **username:** `postgres` and **password:** `1q2w3E*` 
 
 ## MySql
 ```shell
-docker run --restart unless-stopped -e 'MYSQL_ROOT_PASSWORD=12345678Aa' -p 3306:3306 -d mysql:5.7
+docker run --name tmp-mysql --restart unless-stopped -e 'MYSQL_ROOT_PASSWORD=12345678Aa' -p 3306:3306 -d mysql:5.7
 ```
 
 For Apple M1 (Silicon)
 ```Shell
-docker run --restart unless-stopped -e 'MYSQL_ROOT_PASSWORD=12345678Aa' -p 3306:3306 --platform linux/x86_64 -d mysql:5.7
+docker run --name tmp-mysql --restart unless-stopped -e 'MYSQL_ROOT_PASSWORD=1q2w3E*' -p 3306:3306 --platform linux/x86_64 -d mysql:5.7
 ```
 
-- Then open management IDE and try to connect to `localhost:3306` with **username:** root and **password:** `12345678Aa`
+- Then open management IDE and try to connect to `localhost:3306` with **username:** root and **password:** `1q2w3E*`
 
 ## MongoDB
 ```shell
@@ -63,7 +63,7 @@ docker run --name tmp-mongo --restart unless-stopped -p 27017:27017 -d mongo:lat
 ## Redis
 
 ```shell
-docker run -p 6379:6379 -d --restart unless-stopped redis
+docker run --name tmp-redis -p 6379:6379 -d --restart unless-stopped redis
 ```
 
 # Event Bus
@@ -71,7 +71,7 @@ docker run -p 6379:6379 -d --restart unless-stopped redis
 ## RabbitMQ
 
 ```shell
-docker run -d --restart unless-stopped -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+docker run --name tmp-rabbitmq -d --restart unless-stopped -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 ```
 
  - Go [localhost:15672](http://localhost:15672) to check is rabbitmq dashboard works properly.
