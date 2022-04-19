@@ -19,26 +19,26 @@ Table of contents:
 ## SQL Server
 Original Windows Version:
 ```shell
-docker run --name tmp-sqlserver --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=1q2w3E*' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
+docker run --name tmp-sqlserver --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=12345678Aa' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
 ```
 
 SqlServer Linux Version:
 ```shell
-docker run --name tmp-sqlserver -d --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=1q2w3E*' -p 1433:1433 microsoft/mssql-server-linux
+docker run --name tmp-sqlserver -d --restart unless-stopped -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=12345678Aa' -p 1433:1433 microsoft/mssql-server-linux
 ```
 
 Azure-Sql for Apple M1 (Silicon)
 ```shell
-docker run --name tmp-sqlserver --restart unless-stopped -d --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=1q2w3E*' -p 1433:1433 mcr.microsoft.com/azure-sql-edge
+docker run --name tmp-sqlserver --restart unless-stopped -d --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=12345678Aa' -p 1433:1433 mcr.microsoft.com/azure-sql-edge
 ```
 
-- Then go your management IDE and try to connect to `localhost:1433` with **username:** `SA` and **password:** `1q2w3E*` 
+- Then go your management IDE and try to connect to `localhost:1433` with **username:** `SA` and **password:** `12345678Aa` 
 
 ## PostgreSQL
 ```shell
-docker run --name tmp-postgres --restart unless-stopped -e POSTGRES_PASSWORD=1q2w3E* -p 5432:5432 -d postgres
+docker run --name tmp-postgres --restart unless-stopped -e POSTGRES_PASSWORD=12345678Aa -p 5432:5432 -d postgres
 ```
-- Then go your management IDE and try to connect to `localhost:5432` with **username:** `postgres` and **password:** `1q2w3E*` 
+- Then go your management IDE and try to connect to `localhost:5432` with **username:** `postgres` and **password:** `12345678Aa` 
 
 ## MySql
 ```shell
@@ -47,10 +47,10 @@ docker run --name tmp-mysql --restart unless-stopped -e 'MYSQL_ROOT_PASSWORD=123
 
 For Apple M1 (Silicon)
 ```Shell
-docker run --name tmp-mysql --restart unless-stopped -e 'MYSQL_ROOT_PASSWORD=1q2w3E*' -p 3306:3306 --platform linux/x86_64 -d mysql:5.7
+docker run --name tmp-mysql --restart unless-stopped -e 'MYSQL_ROOT_PASSWORD=12345678Aa' -p 3306:3306 --platform linux/x86_64 -d mysql:5.7
 ```
 
-- Then open management IDE and try to connect to `localhost:3306` with **username:** root and **password:** `1q2w3E*`
+- Then open management IDE and try to connect to `localhost:3306` with **username:** root and **password:** `12345678Aa`
 
 ## MongoDB
 ```shell
